@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from __future__ import print_function
+from pickupline import PickupLine
+import argparse
+import pyperclip
+def main(args):
+    if args.geek:
+        pick = PickupLine(geek=True)
+    elif args.dirty:
+        pick = PickupLine(dirty=True)
+    elif args.math:
+        pick = PickupLine(math=True)
+    elif args.scifi:
+        pick = PickupLine(scifi=True)
+    elif args.physics:
+        pick = PickupLine(physics=True)
+    else:
+        pick = PickupLine(random=True)
+    line = pick.get_line().strip()
+    pyperclip.copy(line)
+    print("\n"+line+"\n")
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="A CLI tool for generating PickupLine from web", 
+                                     epilog="the pickup-line will be copied to the clipboard")
+    parser.add_argument('-g', '--geek', action='store_true', help="get a geeky pickupline")
+    parser.add_argument('-d', '--dirty', action='store_true', help="get a dirty pickupline")
+    parser.add_argument('-m', '--math', action='store_true', help="get a math based pickupline")
+    parser.add_argument('-s', '--scifi', action='store_true', help="get a scifi based pickupline")
+    parser.add_argument('-p', '--physics', action='store_true', help="get a physics based pickupline")
+    parser.add_argument('-r', '--random', action='store_true', help="get a random pickupline")
+    args = parser.parse_args()
+    try:
+        main(args)
+    except KeyboardInterrupt:
+        print("Error:Interrupted by user !!!")
