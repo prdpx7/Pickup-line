@@ -1,7 +1,7 @@
 # pickup-line
 :wink: a cli tool to generate pickup-lines
 
-[![MITlicensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/zuck007/pickup-line/master/LICENSE)
+[![MITlicensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/prdpx7/pickup-line/master/LICENSE)
 [![PyPI version](https://badge.fury.io/py/pickupline.svg)](https://badge.fury.io/py/pickupline)
 
 ## Installation

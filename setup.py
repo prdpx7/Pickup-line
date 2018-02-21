@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(name="pickupline",
-      version="1.0",
+      version="1.1",
       description="Get PickupLines on various categories from web",
-      url="http://github.com/zuck007/pickup-line",
+      url="http://github.com/prdpx7/pickup-line",
       author="Pradeep Khileri",
       author_email="pradeepchoudhary009@gmail.com",
       license="MIT",
