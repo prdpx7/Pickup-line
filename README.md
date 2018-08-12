@@ -27,4 +27,4 @@ optional arguments:
 the pickup-line will be copied to the clipboard
 ```
 ## Demo
-<img src="http://i.imgur.com/xDIZKir.png" alt="snap">
+<img src="https://i.imgur.com/QhSY9md.png" alt="snap">
