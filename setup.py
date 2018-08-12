@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name="pickupline",
-      version="1.1",
+      version="2.0",
       description="Get PickupLines on various categories from web",
       url="http://github.com/prdpx7/pickup-line",
       author="Pradeep Khileri",
@@ -14,6 +14,7 @@ setup(name="pickupline",
           "pyperclip",
           "requests",
           "bs4",
+          "html5lib",
       ],
       zip_safe=False)
 

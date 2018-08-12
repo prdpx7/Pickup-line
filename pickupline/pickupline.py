@@ -1,14 +1,15 @@
+from __future__ import print_function
 import requests
 from bs4 import BeautifulSoup
 import sys
 import random as Random
-reload(sys)
-sys.setdefaultencoding("utf-8")
+
+
 def get_soup(url):
     try:
-        return BeautifulSoup(requests.get(url).text,"html.parser")
+        return BeautifulSoup(requests.get(url).text,"html5lib")
     except Exception as SockException:
-        print SockException
+        print(SockException)
         sys.exit(1)
 
 class PickupLine(object):
@@ -39,11 +40,12 @@ class PickupLine(object):
         return a geeky pickupline
         """
         if self.random:
-            return get_soup(self.url).select("body > section > div#content")[0].text.strip(" ")
+            return get_soup(self.url).select("body > section > div#content")[0].text.strip()
         else:
             soup = get_soup(self.url)
-            lines = "".join([i.text for i in soup.select("main > p.action-paragraph.paragraph > span.paragraph-text-7")]).split("\n\n")
-            return lines[Random.randrange(0,len(lines)-2)].strip(" ")
+            lines = "\n".join([i.text.strip() for i in soup.select("main > p.action-paragraph.paragraph > span") if "<<" not in i.text.strip()])
+            lines = [line.strip() for line in lines.split("\n") if line.strip()]
+            return lines[Random.randrange(0,len(lines)-2)].strip()
 
 
 
