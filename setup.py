@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name="pickupline",
-      version="2.1",
+      version="2.2",
       description="Get PickupLines on various categories from web",
       url="http://github.com/prdpx7/pickup-line",
       author="Pradeep Khileri",
