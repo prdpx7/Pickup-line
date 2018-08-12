@@ -34,6 +34,10 @@ class PickupLine(object):
         else:
             self.random = True
             self.url = "http://www.pickuplinegen.com/"
+
+    def clean_line(self, line):
+        return "\n".join(filter(lambda x: len(x.strip()) > 0, line.split("\n")))
+
     def get_line(self):
         """
         e.g PickupLine(geek=True).get_line() will
@@ -43,9 +47,9 @@ class PickupLine(object):
             return get_soup(self.url).select("body > section > div#content")[0].text.strip()
         else:
             soup = get_soup(self.url)
-            lines = "\n".join([i.text.strip() for i in soup.select("main > p.action-paragraph.paragraph > span") if "<<" not in i.text.strip()])
+            lines = "\n".join([self.clean_line(line.text.strip()) for line  in soup.select("main > p.action-paragraph.paragraph > span")])
             lines = [line.strip() for line in lines.split("\n") if line.strip()]
-            return lines[Random.randrange(0,len(lines)-2)].strip()
+            return lines[Random.randrange(1,len(lines)-2)].strip()
 
 
 
