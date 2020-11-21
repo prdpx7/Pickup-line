@@ -6,25 +6,29 @@
 
 ## Installation
 ```
-pip install pickupline
+pip3 install pickupline
 ```
 ## Usage
 ```
-$ pickup-line --help
-usage: pickup-line [-h] [-g] [-d] [-m] [-s] [-p] [-r]
+$ pickup-line -h
+usage: pickup-line [-h] [-r] [-k KEYWORD] [-l]
 
 A CLI tool for generating PickupLine from web
 
 optional arguments:
-  -h, --help     show this help message and exit
-  -g, --geek     get a geeky pickupline
-  -d, --dirty    get a dirty pickupline
-  -m, --math     get a math based pickupline
-  -s, --scifi    get a scifi based pickupline
-  -p, --physics  get a physics based pickupline
-  -r, --random   get a random pickupline
+  -h, --help            show this help message and exit
+  -r, --random          get a random pickupline
+  -k KEYWORD, --keyword KEYWORD
+                        Search pickuplines by keyword.
+                        Example:
+                        pickup-line --k trump
+                        pickup-line -keyword geek
+                        pickup-line --keyword scifi
+                        pickup-line -k dirty
+
+  -l, --list            list all existing categories
 
 the pickup-line will be copied to the clipboard
 ```
-## Demo
-<img src="https://i.imgur.com/QhSY9md.png" alt="snap">
+## Sample
+<img src="https://i.imgur.com/O29D5sO.png" alt="snap">
