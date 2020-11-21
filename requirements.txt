@@ -1,0 +1,12 @@
+beautifulsoup4==4.9.3
+bs4==0.0.1
+certifi==2020.11.8
+chardet==3.0.4
+html5lib==1.1
+idna==2.10
+pyperclip==1.8.1
+requests==2.25.0
+six==1.15.0
+soupsieve==2.0.1
+urllib3==1.26.2
+webencodings==0.5.1
